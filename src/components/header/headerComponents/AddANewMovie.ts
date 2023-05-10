@@ -4,11 +4,10 @@ import axios from "axios";
 
 
 export const AddANewMovie = (movieInputs, setMovieInputs, movies ,setMovies) => {
-  
   if (
     movieInputs.name          &&
     movieInputs.producer      &&
-    movieInputs.year          &&
+    movieInputs.year          && 1895 <= movieInputs.year && movieInputs.year <= new Date().getFullYear() &&
     movieInputs.description
     ){
       let newMovie = {

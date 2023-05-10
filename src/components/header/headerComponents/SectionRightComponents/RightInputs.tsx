@@ -2,7 +2,7 @@ import React, {useContext, useEffect} from 'react'
 import MovieContext from '../../../MoviesContext';
 
 
-export const RightInputs = ({item, key}: props) => {
+export const RightInputs = ({item}: props) => {
   let movieInputs     = useContext(MovieContext).movieInputs;
   let setMovieInputs  = useContext(MovieContext).setMovieInputs;
 

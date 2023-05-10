@@ -23,6 +23,8 @@ function App() {
     year        : null    ,
     description : ``      ,
   }); 
+
+  let [filter, setFilter] = useState<string>(``);
   
   const [movies, setMovies] = useState([]);
 
@@ -30,7 +32,7 @@ function App() {
   return (
     <>
     <ToastContainer />
-    <MovieContext.Provider value={{movies, setMovies, movieInputs, setMovieInputs}}>
+    <MovieContext.Provider value={{movies, setMovies, movieInputs, setMovieInputs, filter, setFilter}}>
       <Header/>
       <Main />
     </MovieContext.Provider>

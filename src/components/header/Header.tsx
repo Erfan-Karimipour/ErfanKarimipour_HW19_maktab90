@@ -10,7 +10,7 @@ export const Header = () => {
   
   return (
 
-    <form className='grid grid-cols-2 bg-[#515050] gap-10 h-[40vh] justify-center px-28 items-center w-full'>
+    <form className='grid md:grid-cols-2 bg-[#515050] gap-10 h-[50vh] justify-center lg:px-28 md:h-[40vh] grid-cols-1 items-center w-full'>
 
         <SectionRight />
         <SectionLeft />

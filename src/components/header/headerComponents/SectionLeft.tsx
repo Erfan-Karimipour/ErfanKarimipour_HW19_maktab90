@@ -14,7 +14,7 @@ export const SectionLeft = () => {
     <div className='flex flex-col'>
         <div>
             <p className='border-r border-r-8 border-r-yellow-400 text-white font-bold mb-2 pr-2 rounded-md'>توضیحات</p>
-            <input type="text" value={movieInputs.description} className='bg-[#515050] border outline-yellow-400 border-gray-400 p-2 rounded-md text-sm text-white w-full h-24' placeholder='توضیحات درباره فیلم' onChange={(e) => {
+            <textarea type="text" value={movieInputs.description} className='bg-[#515050] border outline-yellow-400 border-gray-400 p-2 rounded-md text-sm text-white w-full h-24 max-h-36' placeholder='توضیحات درباره فیلم' onChange={(e) => {
                 setMovieInputs({...movieInputs, description: e.target.value});     
             }}/>
         </div>
