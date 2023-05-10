@@ -1,4 +1,5 @@
 import { useEffect, useContext } from 'react';
+import { toast } from 'react-toastify'
 import axios from "axios";
 
 
@@ -24,19 +25,30 @@ export const AddANewMovie = (movieInputs, setMovieInputs, movies ,setMovies) => 
         
         axios.put(`http://localhost:3000/Movies/${res.id}`, newMovie);
         setMovies([...movies.filter((item) => item.name != res.name), newMovie]);
+        toast.success(`${res.name}: فیلم با موفقیت آپدیت شد`, {theme: 'dark', autoClose: 2000})
+        setMovieInputs(
+          {
+            name        : ``      ,
+            genre       : `Horror`,
+            producer    : ``      ,
+            year        : ``    ,
+            description : ``      ,
+          }
+        )
           
     }).catch(() => {
       axios.post(`http://localhost:3000/Movies`, newMovie)
       setMovieInputs(
         {
-          name        : ``,
-          genre       : ``,
-          producer    : ``,
-          year        : 0 ,
-          description : ``,
+          name        : ``      ,
+          genre       : `Horror`,
+          producer    : ``      ,
+          year        : ``    ,
+          description : ``      ,
         }
       )
-      setMovies([...movies, newMovie])
+      setMovies([...movies, newMovie]);
+      toast.success(`${newMovie.name}:فیلم جدید اضافه شد`, {theme: 'dark', autoClose: 2000})
     })
      }  
       

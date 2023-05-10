@@ -23,11 +23,11 @@ export const SectionLeft = () => {
              }}>ذخیره</button>
             <button type='reset'  className='w-28 h-10 rounded-md border text-white' onClick={() => {
               setMovieInputs({
-                name: ``,
-                genre: ``,
-                producer: ``,
-                year: 0,
-                description: ``
+                name        : ``      ,
+                genre       : `Horror`,
+                producer    : ``      ,
+                year        : ``    ,
+                description : ``
               })
             }}>انصراف</button>
         </div>

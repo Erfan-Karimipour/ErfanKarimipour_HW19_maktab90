@@ -30,7 +30,14 @@ return (
             <button className='flex justify-center text-xl' onMouseEnter={(e) => e.target.innerHTML = '<ion-icon name="pencil-outline" class="p-1 bg-yellow-400 rounded-full text-black"></ion-icon>'} onMouseLeave={(e) => e.target.innerHTML = i + 1} onClick={() => HandleEdit(i, movie.id, movie, movieInputs, setMovieInputs)}>{i + 1}</button>
             <p className='flex justify-center'>         {movie.name}     </p>
             <p className='flex justify-center'>         {movie.producer} </p>
-            <p className='flex justify-center'>         {movie.genre}    </p>
+            <p className='flex justify-center'>         {
+              movie.genre == 'Horror'         ? 'ترسناک'      :
+              movie.genre == 'Action'         ? 'اکشن'        :
+              movie.genre == 'Drama'          ? 'دراما'       :
+              movie.genre == 'ScienceFiction' ? 'علمی تخیلی' :
+              movie.genre == 'Comedy'         ? 'کمدی'        :
+              movie.genre == 'Fantasy'        ? 'فانتزی'      : ''
+            }</p>
             <p className='flex justify-center'>         {movie.year}     </p>
             <button className='border-blue-400 border w-fit px-4 py-1 flex mx-auto rounded-md' onClick={(e) => {
               setDescriptionShow(movie.description);
@@ -39,7 +46,7 @@ return (
                  توضیحات
               </p>
             </button>
-            <button className='border-red-500  items-center w-fit border flex mx-auto px-4 py-1 rounded-md' onClick={() => HandleDelete(movie.id, movies, setMovies)}>
+            <button className='border-red-500  items-center w-fit border flex mx-auto px-4 py-1 rounded-md' onClick={() => HandleDelete(movie, movies, setMovies)}>
               <p>
                  حذف
               </p>

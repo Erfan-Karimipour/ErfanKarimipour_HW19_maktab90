@@ -12,4 +12,5 @@ export const HandleEdit = (i, id, movie, movieInputs, setMovieInputs) => {
         year        : movie.year,
         description : movie.description,
     })
+    
 }

@@ -3,6 +3,8 @@ import { useState, Context, createContext } from 'react';
 import { Header } from './components/header/Header'
 import { Main } from './components/main/Main'
 import MovieContext from './components/MoviesContext';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 interface myContextTypes {
   name        : string,
@@ -15,18 +17,19 @@ interface myContextTypes {
 function App() {
 
   let [movieInputs, setMovieInputs] = useState<myContextTypes>({
-    name        : ``,
-    genre       : ``,
-    producer    : ``,
-    year        : 0 ,
-    description : ``,
-  });
+    name        : ``      ,
+    genre       : `Horror`,
+    producer    : ``      ,
+    year        : null    ,
+    description : ``      ,
+  }); 
   
   const [movies, setMovies] = useState([]);
 
 
   return (
     <>
+    <ToastContainer />
     <MovieContext.Provider value={{movies, setMovies, movieInputs, setMovieInputs}}>
       <Header/>
       <Main />

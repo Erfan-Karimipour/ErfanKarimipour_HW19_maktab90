@@ -32,18 +32,19 @@ export const RightInputs = ({item, key}: props) => {
         </select>
         : 
         <input type={item == 'year' ? 'number' : 'text'} className='bg-[#515050] border border-gray-400 p-2 py-3 rounded-md text-sm w-full text-white outline-yellow-400' value={
-            item == 'name'      ? movieInputs.name         :
-            item == 'producer'  ? movieInputs.producer   :
-            item == 'year'      ? null  : ''  
+            item == 'name'      ? movieInputs.name      :
+            item == 'producer'  ? movieInputs.producer  :
+            item == 'year'      ? movieInputs.year      : 
+            item == 'genre'     ? movieInputs.genre     : ''
         } placeholder={
             item == 'name'      ? 'نام فیلم را بنویسید'         :
             item == 'producer'  ? 'نام کارگردان را وارد کنید'   :
             item == 'year'      ? 'سال ساخت فیلم را وارد کنید'  : ''   
         } onChange={(e) => {
             switch (item){
-                case 'name'     : setMovieInputs({...movieInputs, name: e.target.value});       break;
-                case 'producer' : setMovieInputs({...movieInputs, producer: e.target.value});   break;
-                case 'year'     : setMovieInputs({...movieInputs, year: e.target.value});       break;
+                case 'name'     : setMovieInputs({...movieInputs, name:     e.target.value});       break;
+                case 'producer' : setMovieInputs({...movieInputs, producer: e.target.value});       break;
+                case 'year'     : setMovieInputs({...movieInputs, year:     e.target.value});       break;
             }
         }} />
         }
